@@ -1,5 +1,11 @@
 data = [{todos:'Take a nap'}, {todos:'Have My Bath'}, {todos:'Cook my noodles'}]
 var bodyParser = require('body-Parser')
+var mogoose = require('mongoose')
+
+//connect to a database
+mongoose.connect(mongodb:beejay1293:december12@ds159563.mlab.com:59563/to-do-app)
+
+//create a schema - a blueprint for our data
 
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
