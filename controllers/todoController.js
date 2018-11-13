@@ -1,11 +1,21 @@
 data = [{todos:'Take a nap'}, {todos:'Have My Bath'}, {todos:'Cook my noodles'}]
 var bodyParser = require('body-Parser')
-var mogoose = require('mongoose')
+var mongoose = require('mongoose')
 
 //connect to a database
-mongoose.connect(mongodb:beejay1293:december12@ds159563.mlab.com:59563/to-do-app)
+mongoose.connect('mongodb://test:december12@ds145752.mlab.com:45752/todo')
 
 //create a schema - a blueprint for our data
+var todoSchema = new mongoose.Schema({todos: String})
+
+var Todos = mongoose.model('Todoa', todoSchema)
+
+var itemOne = Todos({todos: 'give a flower'}).save(function(err){
+  if (err) throw err;
+  console.log('item added')
+})
+
+
 
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
